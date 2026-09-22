@@ -27,8 +27,9 @@ export const ColorSchema = CalculatorButtonVariantSchema.transform((variant) => 
 
 
 
-
-export const NumberSchema = z.number().int().min(-1000000).max(1000000);
+const numberMax = 1_000_000;
+const numberMin = -numberMax;
+export const NumberSchema = z.number().min(numberMin, `Number is too small ${numberMin}`).max(numberMax, `Number is too large ${numberMax}`);
 
 
 

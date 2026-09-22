@@ -2,6 +2,7 @@ import {CalculatorButton} from "./components/calculatorButton.tsx"
 import {useState} from "react";
 import { OperatorSchema,NumberSchema} from "./types/calculator.ts";
 import {calculate} from "./lib/calculator.ts";
+import {toast} from "sonner";
 
 function App() {
   const [display,setDisplay] = useState('0');
@@ -45,7 +46,12 @@ function App() {
             result = numberResult.data;
           }
         } else {
+          numberResult.error.issues.forEach(issue => {
+            console.error(`Validation error for item "${x}": ${issue.message}`);
+            toast.error(`Validation error for item "${x}": ${issue.message}`);
+          });
           console.error(`Invalid character: ${x}`);
+          toast.error(`Invalid character: ${x}`);
           // Handle invalid character
         }
       }
@@ -83,9 +89,9 @@ function App() {
           <CalculatorButton label={8}  onClick={()=>handleNumberAdd('8')}/>          
           <CalculatorButton label={9}  onClick={()=>handleNumberAdd('9')}/>          
           <CalculatorButton label="/" variant="operator" onClick={()=>handleOperatorAdd('/')}/>  
-          <CalculatorButton label='.'/>
+          <CalculatorButton label='.' onClick={()=>handleNumberAdd('.')}/>
           <CalculatorButton label= {0}  onClick={()=>handleNumberAdd('0')}/>
-          <CalculatorButton label= '+-'/>        
+          {/* <CalculatorButton label= '+-'/>         */}
           
 
           </div>
