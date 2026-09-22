@@ -1,7 +1,7 @@
 // Holds types shared by calculator logic, especially operators
 import {z} from 'zod';
 
-export const OperatorSchema = z.enum(['+', '-', '*', '/']);
+    export const OperatorSchema = z.enum(['+', '-', '*', '/']);
 
 
 export type Operator = z.infer<typeof OperatorSchema>;
@@ -29,7 +29,7 @@ export const ColorSchema = CalculatorButtonVariantSchema.transform((variant) => 
 
 const numberMax = 1_000_000;
 const numberMin = -numberMax;
-export const NumberSchema = z.number().min(numberMin, `Number is too small ${numberMin}`).max(numberMax, `Number is too large ${numberMax}`);
+export const NumberSchema = z.number().min(numberMin, `Number is too small <= ${numberMin.toLocaleString()}`).max(numberMax, `Number is too large >= ${numberMax.toLocaleString()}`);
 
 
 

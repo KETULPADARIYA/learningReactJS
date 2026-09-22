@@ -2,17 +2,33 @@ import {CalculatorButton} from "./components/calculatorButton.tsx"
 import {useState} from "react";
 import { OperatorSchema,NumberSchema} from "./types/calculator.ts";
 import {calculate} from "./lib/calculator.ts";
-import {toast} from "sonner";
+import {toast,Toaster} from "sonner";
 
 function App() {
   const [display,setDisplay] = useState('0');
 
-  const handleNumberAdd = (num:string) =>(
-    setDisplay((prev)=> ( prev === '0' ? num :prev+num))
-  );
+  const handleNumberAdd = (num:string) => {
+    const lastValue = display.trim().at(-1);
+    const isLastValueOperator = OperatorSchema.safeParse(lastValue);
+    if (isLastValueOperator.success){
+      setDisplay((prev)=> prev + ' ' + num);
+    } else {
+      setDisplay((prev)=> ( prev === '0' ? num :prev+num))
+    }
+  };
 
   const handleOperatorAdd = (operator:string)=>{
-    setDisplay((prev)=> `${prev} ${operator} `)
+    // check if the last character is an operator, if so replace it with the new operator
+    const lastValue = display.trim().at(-1);
+    console.log('Last value:', lastValue, 'Operator:', operator);
+    const isLastValueOperator = OperatorSchema.safeParse(lastValue);
+    console.log('Replacing last operator with new operator', isLastValueOperator.success, 'Last value:', lastValue, 'Operator:', operator);
+    if (isLastValueOperator.success){
+      setDisplay((prev)=> prev.slice(0,-1)+ operator);
+      return;
+    } else {
+      setDisplay((prev)=> prev + ' ' + operator );
+    }  
   }
 
   const handleClear = ()=>{
@@ -27,6 +43,7 @@ function App() {
     let op;
     let items = display.split(' ');
     console.log('Display:', display);
+    let failed = false;
     for (let i = 0; i < items.length; i++) {
       const x = items[i];
       const operator = OperatorSchema.safeParse(x);
@@ -50,14 +67,18 @@ function App() {
             console.error(`Validation error for item "${x}": ${issue.message}`);
             toast.error(`Validation error for item "${x}": ${issue.message}`);
           });
-          console.error(`Invalid character: ${x}`);
-          toast.error(`Invalid character: ${x}`);
+          // console.log(numberResult.error.issues);
+          // console.error(`Invalid character: ${x}`);
+          // toast.error(`Invalid Number: ${x} `);
+          failed = true;
+          break;
           // Handle invalid character
         }
       }
     }
+    if (!failed){
     setDisplay(String(result));
-
+    };
   };
   return (
     // Main container
@@ -70,6 +91,8 @@ function App() {
            {display}
           </div>
         {/* <!-- // Calculator keypad box --> */}
+        <Toaster position="bottom-center" richColors closeButton />
+
         <div className="grid grid-cols-4 gap-3">
           {/* // Calculator buttons */}
           <CalculatorButton label="AC" variant="clear" onClick={ ()=>handleClear()} />          
