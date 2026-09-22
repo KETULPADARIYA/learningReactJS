@@ -1,10 +1,13 @@
 import {CalculatorButton} from "./components/calculatorButton.tsx"
-import {useState} from "react";
+import {useState,useRef,useEffect} from "react";
 import { OperatorSchema,NumberSchema} from "./types/calculator.ts";
 import {calculate} from "./lib/calculator.ts";
 import {toast,Toaster} from "sonner";
 
 function App() {
+
+  const displayRef = useRef<HTMLDivElement>(null);
+
   const [display,setDisplay] = useState('0');
 
   const handleNumberAdd = (num:string) => {
@@ -80,15 +83,20 @@ function App() {
     setDisplay(String(result));
     };
   };
+
+  useEffect(() => {
+    if(displayRef.current) {
+      displayRef.current.scrollLeft = displayRef.current.scrollWidth;
+    }
+  },[display]);
   return (
     // Main container
     <div className="min-h-screen grid place-items-center bg-slate-950 px-4">
       {/* <!-- Calculator container box --> */}
       <div className="w-full max-w-sm rounded-3xl  bg-zinc-900 p-4 shadow-2xl">
 
-        {/* // Calculator display */}
-        <div className="min-h-32 flex justify-end px-2 py-4 text-5xl text-white">
-           {display}
+        <div className="min-h-32 w-full min-w-0 box-border overflow-x-scroll px-2 py-4 text-5xl text-white" ref={displayRef}>
+           <div className="block w-max shrink-0 whitespace-nowrap"> {display}</div>
           </div>
         {/* <!-- // Calculator keypad box --> */}
         <Toaster position="bottom-center" richColors closeButton />
