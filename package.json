@@ -2,5 +2,8 @@
     "private": true,
     "workspaces": [
         "apps/*"
-    ]
+    ],
+    "dependencies": {
+        "sonner": "^2.0.8"
+    }
 }
