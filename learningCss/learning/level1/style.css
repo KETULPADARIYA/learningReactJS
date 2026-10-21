@@ -1,0 +1,43 @@
+* {
+    color:greenyellow
+
+}
+
+h1 {
+    color:hsl(238, 83%, 57%);
+}
+
+p {
+    color:rgb(120, 72, 14);
+}
+
+button {
+    color: #023e8a;
+    background-color: bisque;
+}
+
+body {
+    background-color: #caf0f8;
+}
+
+
+#H1 {
+    color:aqua
+}
+
+
+#H2 {
+    color:red
+}
+
+.H1 {
+    color: black;
+}
+
+.box {
+    color: blue;
+}
+
+.heading {
+    color: red;
+}

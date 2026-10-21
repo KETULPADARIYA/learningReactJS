@@ -1,0 +1,26 @@
+div.container{
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    border: 2px solid black;
+    display: inline-block;
+    background-image: url(./cat.png);
+    background-size: contain ;
+    background-repeat: no-repeat;
+
+}
+
+div#box1{
+    /* background-clip: content-box; */
+    background-size: cover;
+    /* bacgroun */
+    /* background-position: left top; */
+}
+
+* {
+    box-sizing: border-box;
+    /* background-image: url(./cat.png); */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    /* background-size: a; */
+}

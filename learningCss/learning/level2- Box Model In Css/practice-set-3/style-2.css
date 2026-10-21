@@ -1,0 +1,27 @@
+* {
+    padding: 0cm;
+    margin: 0px;
+    color: white;
+}
+
+
+#nav-searchbar {
+    height:60px;
+    background-color:#0f1111;
+}
+
+button{
+    background-color:#f08804;
+    color:white;
+
+}
+
+a {
+    color:white;
+    margin-right:100px;
+}
+#logo {
+    color:#f08804;
+    font-size: 25px;
+
+}

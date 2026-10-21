@@ -1,0 +1,34 @@
+div {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border: 3px solid black;
+    padding:10px;
+    margin:40px;
+    transform: rotate(x 30deg);
+    /* rotate: z 90deg; */
+    /* tran */
+}
+
+div:hover {
+    /* transform: rotate(30deg); */
+    background-color: blue;
+    color:white;
+    font-size: 20px;
+    transform: scale(1.5,2);
+
+    transition-duration: 2s;
+    transition-timing-function: steps(4);
+}
+
+div:active {
+    /* transform: scale(1.5); */
+    background-color: green;
+    font-size: 25px;
+    /* translate:20px 0; */
+    transform: skew(20deg, 0);
+    transition-duration: 2s;
+    transition-timing-function: ease;
+    color:white;
+}
+

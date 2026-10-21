@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /* box-sizing: border-box; */
+}
+
+
+div {
+    /* height: 60px; */
+    height: 100px;
+    width: 150px;
+    color:gold;
+    font-weight: bold;
+    /* font-style: bold; */
+    display: flex;
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    /* flex-direction: column-reverse; */
+    /* flex-wrap: wrap; */
+    border:2px solid black;
+    /* margin-top: 10px; */
+    flex-direction: row;
+
+    /* justify-content:space-arou nd; */
+    /* justify-content:flex-end; */
+    /* justify-content:flex-start; */
+    /* justify-content:center; */
+    /* justify-content:space-between; */
+    /* justify-content:space-evenly; */
+    /* /* flex-direction: row ; */
+    /* justify-content: center; */
+    /* flex-wrap:wrap; */
+    align-items: start;
+    /* align-content:center; */
+    /* align-self: center; */
+} 
+
+.container{
+    margin-left: 100px;
+    width: 600px;
+    height: 400px;
+    border:8px solid pink;
+
+}
+ 
+
+#box1{
+    background-color: rgba(255, 0, 0, 0.5);
+    padding-top: 10px;
+    
+}
+#box2{
+    background-color: rgba(0, 0, 255, 0.5);
+    height: 200px;
+
+    /* align-self:flex-end; */
+    flex-shrink: 4;
+
+}
+#box3{
+    background-color: rgba(0, 255, 0, 0.5);
+    height: 75px;
+    flex-shrink: 0;
+}
+#box4{
+    background-color: rgba(255, 255, 0, 0.5);
+}
+#box5{
+    background-color: rgba(255, 255, 255, 0.5);
+    /* align-self:flex-end; */
+
+}

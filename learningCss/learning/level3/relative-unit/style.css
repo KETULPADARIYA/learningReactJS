@@ -1,0 +1,53 @@
+#box-1 {
+    height: 150px;
+    width: 150px;
+    font-size: 10px;
+    /* padding: 10   */
+    background-color: red;
+}
+
+
+#box-2{
+    height:30%;
+    width: 40%;
+    color: white;
+    margin: 10%;
+    background-color: blue;
+}
+
+#box-2{
+    height:4em;
+    width: 4vh;
+    font-size: 2em;
+    color: white;
+    margin: 1em;
+    /* padding: 0.4em; */
+    text-align: center;
+    justify-content : center;
+    background-color: blue;
+}
+
+
+#box-2{
+    height:4rem;
+    width: 4rem;
+    font-size: 2em;
+    color: white;
+    margin: 1em;
+    /* padding: 0.4em; */
+    text-align: center;
+    justify-content : center;
+    background-color: blue;
+}
+
+#box-2{
+    height:10Vh;
+    width: 40vw;
+    font-size: 2em;
+    color: white;
+    margin: 1em;
+    /* padding: 0.4em; */
+    text-align: center;
+    justify-content : center;
+    background-color: blue;
+}

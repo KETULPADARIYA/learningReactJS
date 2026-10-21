@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(123, 173, 208);
+    border: 1px solid black;
+
+}
+
+#box-1 {
+    top:20px;   
+    background-color: aliceblue;
+}
+
+#box-2 {
+    left:2px;
+    top:10px;
+    background-color: antiquewhite;
+    position: relative;
+}
+
+#box-3{  
+    position: absolute;
+    background-color: aquamarine;
+    top:1  0px;
+    left:200px;
+    Z-index: -1;
+}
+
+#box-33{
+    position: sticky;
+    background-color: aquamarine;
+    top:10px;
+    left:200px;
+}
+#box-4{
+    position: fixed;
+    right:20px;
+    width: 100%;
+    bottom:0;
+    
+    background-color: aqua;
+}

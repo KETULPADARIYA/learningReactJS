@@ -1,0 +1,92 @@
+div.box {
+    height: 100px;
+    width: 100px;
+    background-color: aquamarine;
+    border: 3px solid black;
+    padding:10px;
+    margin:40px;
+
+    animation-name: coloranote;
+    animation-duration: 4s;
+    animation-timing-function: ease-in;
+    animation-delay:2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    /* animation-direction: alternate;
+    animation-delay: 2s;
+    animation-play-state: running;
+    animation-name: coloranote;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite; */
+}
+
+
+@keyframes  coloranote {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: blue;
+    }
+}
+
+@keyframes move {
+    from {
+        transform: translate(0,0);
+    }
+    to {
+        transform: translate(100px,100px);
+    }
+}
+
+
+div.box2 {
+    height: 100px;
+    width: 100px;
+    background-color: yellowgreen;
+    border: 3px solid white;
+    padding:10px;
+    margin:40px;
+    /* animation: */
+    animation-name: move; 
+    animation-duration: 4s;
+    animation-timing-function: ease-in;
+    animation-delay:2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate-reverse; 
+}
+
+
+div.box3 {
+    height: 100px;
+    width: 100px;
+    background-color: purple;
+    border: 3px solid white;
+    padding:10px;
+    margin-top: 100px;
+    margin:40px;
+    animation: percent-state 4s ease-in 2s infinite alternate;
+}
+
+@keyframes percent-state {
+    0% {
+        transform: translate(0,0);
+        background-color: red;
+        font-size: 20px;
+    }
+    50%{
+        transform: translate(50px,50px);
+        background-color: blue;
+        font-size: 30px;
+        color: white;
+    }
+    100% {
+        transform: translate(100px,100px);
+        background-color: green;
+        font-size: 40px;
+        font-color: white;
+    }
+}

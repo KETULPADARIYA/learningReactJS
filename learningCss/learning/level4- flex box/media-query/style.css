@@ -1,0 +1,35 @@
+div {
+    height:350px;
+    width:40px;
+    background-color: red;
+}
+/* if width >= 600px then blue */
+@media (min-width: 600px) {
+    div {
+        background-color: blue;
+    }
+}
+
+/* if width <= 350px then green */
+@media (max-width: 350px) {
+    div {
+        background-color: green;
+    }
+}
+
+@media (min-width:350px) and (max-width:430px){
+    div {
+        background-color: purple;
+    }
+}
+/* @media (min-width:350px) and (max-width: 600px) {
+    div {
+        background-color: green;
+    }
+}
+
+@media (max-width: 600px) {
+    div {
+        background-color: yellow;
+    }
+} */

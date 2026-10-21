@@ -1,0 +1,27 @@
+div {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border: 3px solid black;
+    padding:10px;
+    margin:40px;
+    /* tran */
+}
+
+div:hover {
+    /* transform: rotate(30deg); */
+    background-color: blue;
+    color:white;
+    font-size: 20px;
+    transition-duration: 2s;
+    transition-timing-function: steps(4);
+}
+
+div:active {
+    /* transform: scale(1.5); */
+    background-color: green;
+    font-size: 25px;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+    color:white;
+}
